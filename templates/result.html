@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recommended Outfits</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>You selected:</h1>
+        <div class="selected-outfit">
+            <img src="{{ url_for('static', filename='uploads/' + selected_outfit) }}" alt="Selected Outfit">
+        </div>
+        
+        <h2>Related Outfits</h2>
+        <div class="outfit-gallery">
+            {% for outfit in related_outfits %}
+            <div class="outfit">
+                <img src="{{ url_for('static', filename='uploads/' + outfit) }}" alt="Recommended Outfit">
+            </div>
+            {% endfor %}
+        </div>
+        
+        <a href="/">Go back to choose another outfit</a>
+    </div>
+</body>
+</html>
+
+</html>
